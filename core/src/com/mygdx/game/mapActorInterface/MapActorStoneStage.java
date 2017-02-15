@@ -1,15 +1,6 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.mygdx.game.GlobalClasses.Assets;
-import com.mygdx.game.MyBaseClasses.MyLabel;
-import com.mygdx.game.MyBaseClasses.MyStage;
-import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
-import com.mygdx.game.Play.grassActor;
 import com.mygdx.game.Play.stoneActor;
 
 /**
@@ -23,8 +14,10 @@ public class MapActorStoneStage extends MapActorStage {
 
     public MapActorStoneStage(MyGdxGame game, stoneActor g) {
         super(game, g);
-        if(!g.isFog())
-            getActorGroup().addActor(new OneSpriteStaticActor(g.getStone()){
+        allRemove();
+        if(!g.isFog()) stoneIcon.setVisible(true);
+        else fogtext.setVisible(true);
+            /*getActorGroup().addActor(new OneSpriteStaticActor(g.getStone()){
                 @Override
                 public void init() {
                     super.init();
@@ -37,7 +30,7 @@ public class MapActorStoneStage extends MapActorStage {
                         }
                     });
                 }
-            });
-        allRemove();
+            });*/
+        //allRemove();
     }
 }

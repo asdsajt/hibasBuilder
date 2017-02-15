@@ -1,16 +1,9 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.BuildigsClasses.Barrack;
-import com.mygdx.game.BuildigsClasses.Mill;
-import com.mygdx.game.BuildigsClasses.WoodCutter;
-import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.MyLabel;
 import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
-import com.mygdx.game.PlayingMechanism.Buildings;
-import com.mygdx.game.PlayingMechanism.Units;
 
 /**
  * Created by Vince on 2017. 01. 28..
@@ -23,11 +16,11 @@ public class MapActorBarrackStage extends MapActorStage {
     private AnyagokStage kard,ij,lo,agyu;
     private OneSpriteStaticActor faSprite,koSprite,aranySprite,emberSprite,husSprite;
     private MyLabel faLabel,koLabel,aranyLabel,emberLabel,husLabel;
-    private float meretek = (meret/2)/4;
+    //private float meretek = (meret/2)/4;
 
     public MapActorBarrackStage(MyGdxGame game, Barrack b) {
         super(game, b);
-        getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.BARRACK)){
+        /*getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.BARRACK)){
             @Override
             public void init() {
                 super.init();
@@ -40,10 +33,11 @@ public class MapActorBarrackStage extends MapActorStage {
                     }
                 });
             }
-        });
+        });*/
         allRemove();
+        barrackIcon.setVisible(true);
 
-        init();
+        /*init();
         getActorGroup().addActor(sword);
         getActorGroup().addActor(bow);
         getActorGroup().addActor(horse);
@@ -104,11 +98,11 @@ public class MapActorBarrackStage extends MapActorStage {
         getActorGroup().addActor(koLabel);
         getActorGroup().addActor(faLabel);
         getActorGroup().addActor(husLabel);
-        getActorGroup().addActor(emberLabel);
+        getActorGroup().addActor(emberLabel);*/
 
     }
 
-    private void alapAnyagok(float yPos, String aranyl, String kol, String fal, String husl, String emberl){
+    /*private void alapAnyagok(float yPos, String aranyl, String kol, String fal, String husl, String emberl){
         aranySprite = new OneSpriteStaticActor(Assets.manager.get(Assets.ARANY));
         aranySprite.setSize(meretek,meretek);
         aranySprite.setPosition(meret/2,yPos);
@@ -141,7 +135,7 @@ public class MapActorBarrackStage extends MapActorStage {
 
         husLabel.setPosition(meret/2+meret/4+husSprite.getWidth(), yPos+koSprite.getHeight());
         emberLabel.setPosition(meret/2+meret/4+emberSprite.getWidth(), yPos+koSprite.getHeight()+husSprite.getHeight());
-    }
+    }*/
 
     @Override
     public void init() {
@@ -167,7 +161,7 @@ public class MapActorBarrackStage extends MapActorStage {
         agyu.setPosition(0,0);
         addActor(agyu);*/
         
-        bow = new OneSpriteStaticActor(Assets.manager.get(Assets.BOW_MAN));
+        /*bow = new OneSpriteStaticActor(Assets.manager.get(Assets.BOW_MAN));
         bow.setSize(meret/2,meret/2);
         bow.setPosition(0,getViewport().getWorldHeight()/2-meret/3);
         bow.addListener(new ClickListener() {
@@ -209,6 +203,6 @@ public class MapActorBarrackStage extends MapActorStage {
                 super.clicked(event, x, y);
                 Units.ujAgyus();
             }
-        });
+        });*/
     }
 }

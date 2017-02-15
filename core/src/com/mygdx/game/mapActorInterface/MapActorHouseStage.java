@@ -1,12 +1,6 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.BuildigsClasses.House;
-import com.mygdx.game.BuildigsClasses.Mill;
-import com.mygdx.game.BuildigsClasses.WoodCutter;
-import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.MyLabel;
 import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
@@ -23,7 +17,7 @@ public class MapActorHouseStage extends MapActorStage {
 
     public MapActorHouseStage(MyGdxGame game, House h) {
         super(game, h);
-        getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HOUSE)){
+        /*getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HOUSE)){
             @Override
             public void init() {
                 super.init();
@@ -44,14 +38,16 @@ public class MapActorHouseStage extends MapActorStage {
         getActorGroup().addActor(person);
         getActorGroup().addActor(label);
         getActorGroup().addActor(coin);
-        getActorGroup().addActor(coinLabel);
+        getActorGroup().addActor(coinLabel);*/
+        allRemove();
+        houseIcon.setVisible(true);
     }
 
     @Override
     public void init() {
         super.init();
 
-        coinLabel = new MyLabel("2 / day",labelStyle(80));
+        /*coinLabel = new MyLabel("2 / day",labelStyle(80));
         coinLabel.setPosition(meret/2-coinLabel.getWidth()/2, getViewport().getWorldHeight()/2-meret/2);
 
         coin = new OneSpriteStaticActor(Assets.manager.get(Assets.ARANY));
@@ -64,7 +60,7 @@ public class MapActorHouseStage extends MapActorStage {
 
         label = new MyLabel("1 / day",labelStyle(80));
         label.setAlignment(Align.center);
-        label.setPosition(meret/2-label.getWidth()/2, getViewport().getWorldHeight()/2-meret/2-person.getHeight()-label.getHeight());
+        label.setPosition(meret/2-label.getWidth()/2, getViewport().getWorldHeight()/2-meret/2-person.getHeight()-label.getHeight());*/
 
     }
 }

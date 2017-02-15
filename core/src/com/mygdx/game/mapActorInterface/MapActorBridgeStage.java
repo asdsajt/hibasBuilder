@@ -1,12 +1,6 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.BuildigsClasses.Bridge;
-import com.mygdx.game.BuildigsClasses.Mill;
-import com.mygdx.game.BuildigsClasses.WoodCutter;
-import com.mygdx.game.GlobalClasses.Assets;
-import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
 
 /**
@@ -19,7 +13,7 @@ public class MapActorBridgeStage extends MapActorStage {
 
     public MapActorBridgeStage(MyGdxGame game, Bridge b) {
         super(game, b);
-        getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.BRIDGE)){
+        /*getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.BRIDGE)){
             @Override
             public void init() {
                 super.init();
@@ -32,7 +26,8 @@ public class MapActorBridgeStage extends MapActorStage {
                     }
                 });
             }
-        });
+        });*/
         allRemove();
+        bridgeIcon.setVisible(true);
     }
 }

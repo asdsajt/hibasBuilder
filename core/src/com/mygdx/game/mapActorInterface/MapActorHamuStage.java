@@ -1,10 +1,6 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.BuildigsClasses.Hamu;
-import com.mygdx.game.BuildigsClasses.Mill;
-import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.MyLabel;
 import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
@@ -21,7 +17,7 @@ public class MapActorHamuStage extends MapActorStage {
 
     public MapActorHamuStage(MyGdxGame game, Hamu h) {
         super(game, h);
-        getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HAMU)) {
+        /*getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.HAMU)) {
             @Override
             public void init() {
                 super.init();
@@ -34,7 +30,8 @@ public class MapActorHamuStage extends MapActorStage {
                     }
                 });
             }
-        });
+        });*/
         allRemove();
+        ashIcon.setVisible(true);
     }
 }

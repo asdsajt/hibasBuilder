@@ -2,17 +2,12 @@ package com.mygdx.game.mapActorInterface;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
-import com.mygdx.game.BuildigsClasses.Bridge;
-import com.mygdx.game.BuildigsClasses.FishDock;
 import com.mygdx.game.GlobalClasses.Assets;
-import com.mygdx.game.MyBaseClasses.MyLabel;
 import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.Play.PlayStage;
 import com.mygdx.game.Play.grassActor;
 import com.mygdx.game.Play.waterActor;
-import com.mygdx.game.PlayingMechanism.Buildings;
 
 /**
  * Created by Kicsi on 2017. 01. 28..
@@ -21,15 +16,15 @@ import com.mygdx.game.PlayingMechanism.Buildings;
 public class MapActorWaterStage extends MapActorStage {
 
     private OneSpriteStaticActor water,redX;
-    private OneSpriteStaticActor faSprite,koSprite,aranySprite,emberSprite,husSprite;
+    /*private OneSpriteStaticActor faSprite,koSprite,aranySprite,emberSprite,husSprite;
     private MyLabel faLabel,koLabel,aranyLabel,emberLabel,husLabel;
-    private float meretek = (meret/2)/4;
+    private float meretek = (width/2)/4;*/
 
 
     public MapActorWaterStage(MyGdxGame game, waterActor g) {
         super(game, g);
         if(!g.isFog()) {
-            getActorGroup().addActor(water = new OneSpriteStaticActor(Assets.manager.get(Assets.WATER_BLOCK)) {
+            /*getActorGroup().addActor(water = new OneSpriteStaticActor(Assets.manager.get(Assets.WATER_BLOCK)) {
                 @Override
                 public void init() {
                     super.init();
@@ -42,9 +37,9 @@ public class MapActorWaterStage extends MapActorStage {
                         }
                     });
                 }
-            });
-
-            waterbuildings();
+            });*/
+            allRemove();
+            waterBuildings();
 
             /*halaszanyag = new AnyagokStage(getViewport(),100,-28-(128*1), Buildings.farm.getLetrehoz()[2], Buildings.farm.getLetrehoz()[3], Buildings.farm.getLetrehoz()[4], Buildings.farm.getLetrehoz()[1], Buildings.farm.getLetrehoz()[0]);
             halaszanyag.setSize(100,100);
@@ -93,7 +88,7 @@ public class MapActorWaterStage extends MapActorStage {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         int t[] = {1, mapactor.getPosArrayX(), mapactor.getPosArrayY(), 12};
-                        ujepuletFeltolt(t);
+                        //ujepuletFeltolt(t);
                     }
                 });
                 hid.addListener(new ClickListener(){
@@ -101,28 +96,25 @@ public class MapActorWaterStage extends MapActorStage {
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
                         int t[] = {1, mapactor.getPosArrayX(), mapactor.getPosArrayY(), 13};
-                        ujepuletFeltolt(t);
+                        //ujepuletFeltolt(t);
                     }
                 });
             }
             else{
                 redX = new OneSpriteStaticActor(Assets.manager.get(Assets.REDX));
-                redX.setSize(meret/2,meret/2);
+                redX.setSize(width/2,width/2);
                 redX.setPosition(halasz.getX(),halasz.getY());
                 //getActorGroup().addActor(redX);
 
                 redX = new OneSpriteStaticActor(Assets.manager.get(Assets.REDX));
-                redX.setSize(meret/2,meret/2);
+                redX.setSize(width/2,width/2);
                 redX.setPosition(hid.getX(),hid.getY());
                 //getActorGroup().addActor(redX);
             }
 
         } else { // ha ködös
             allRemove();
-            MyLabel label = new MyLabel("You can't\nbuild here!\n\nYou haven't\nexplored\nthis side of\n the map yet!",labelStyle(50));
-            //getActorGroup().addActor(label);
-            label.setAlignment(Align.center);
-            label.setPosition(meret/2-label.getWidth()/2,getViewport().getWorldHeight()/2-label.getHeight()/2);
+            fogtext.setVisible(true);
         }
         /*if((PlayStage.mapActors[g.getPosArrayX()][g.getPosArrayY()+1] instanceof waterActor &&
                 PlayStage.mapActors[g.getPosArrayX()][g.getPosArrayY()-1] instanceof waterActor &&
@@ -167,7 +159,7 @@ public class MapActorWaterStage extends MapActorStage {
 
     }
 
-    private void alapAnyagok(float yPos, String aranyl, String kol, String fal, String husl, String emberl){
+    /*private void alapAnyagok(float yPos, String aranyl, String kol, String fal, String husl, String emberl){
         aranySprite = new OneSpriteStaticActor(Assets.manager.get(Assets.ARANY));
         aranySprite.setSize(meretek,meretek);
         aranySprite.setPosition(meret/2,yPos);
@@ -200,6 +192,6 @@ public class MapActorWaterStage extends MapActorStage {
 
         emberLabel.setPosition(meret/2+meret/4+emberSprite.getWidth(), yPos+koSprite.getHeight());
         husLabel.setPosition(meret/2+meret/4+husSprite.getWidth(), yPos+koSprite.getHeight()+emberLabel.getHeight());
-    }
+    }*/
 
 }

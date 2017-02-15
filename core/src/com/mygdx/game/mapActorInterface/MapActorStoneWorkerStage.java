@@ -1,11 +1,7 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.BuildigsClasses.StoneWorker;
-import com.mygdx.game.BuildigsClasses.WoodCutter;
-import com.mygdx.game.GlobalClasses.Assets;
 import com.mygdx.game.MyBaseClasses.MyLabel;
 import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
@@ -23,7 +19,7 @@ public class MapActorStoneWorkerStage extends MapActorStage {
 
     public MapActorStoneWorkerStage(MyGdxGame game, StoneWorker s) {
         super(game, s);
-        getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.STONE_WORKER)){
+        /*getActorGroup().addActor(new OneSpriteStaticActor(Assets.manager.get(Assets.STONE_WORKER)){
             @Override
             public void init() {
                 super.init();
@@ -46,14 +42,17 @@ public class MapActorStoneWorkerStage extends MapActorStage {
         getActorGroup().addActor(coin);
 
         getActorGroup().addActor(stone);
-        getActorGroup().addActor(stoneLabel);
+        getActorGroup().addActor(stoneLabel);*/
+
+        allRemove();
+        stoneworkerIcon.setVisible(true);
     }
 
     @Override
     public void init() {
         super.init();
 
-        coinLabel = new MyLabel("2 / day",labelStyle(80));
+        /*coinLabel = new MyLabel("2 / day",labelStyle(80));
         coinLabel.setPosition(meret/2-coinLabel.getWidth()/2, getViewport().getWorldHeight()/2-meret/2);
 
         coin = new OneSpriteStaticActor(Assets.manager.get(Assets.ARANY));
@@ -67,7 +66,7 @@ public class MapActorStoneWorkerStage extends MapActorStage {
         stone.setPosition(meret/4, getViewport().getWorldHeight()/2-meret/2-stone.getHeight());
 
         stoneLabel = new MyLabel("3 / day", labelStyle(80));
-        stoneLabel.setPosition(meret/2-stoneLabel.getWidth()/2, getViewport().getWorldHeight()/2-meret/2-stone.getHeight()-stoneLabel.getHeight());
+        stoneLabel.setPosition(meret/2-stoneLabel.getWidth()/2, getViewport().getWorldHeight()/2-meret/2-stone.getHeight()-stoneLabel.getHeight());*/
 
     }
 }

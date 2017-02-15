@@ -1,11 +1,6 @@
 package com.mygdx.game.mapActorInterface;
 
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.mygdx.game.MyBaseClasses.MyLabel;
-import com.mygdx.game.MyBaseClasses.OneSpriteStaticActor;
 import com.mygdx.game.MyGdxGame;
-import com.mygdx.game.Play.grassActor;
 import com.mygdx.game.Play.woodActor;
 
 /**
@@ -16,8 +11,11 @@ public class MapActorWoodStage extends MapActorStage {
 
     public MapActorWoodStage(MyGdxGame game, woodActor g) {
         super(game, g);
+        allRemove();
         if(!g.isFog())
-            getActorGroup().addActor(new OneSpriteStaticActor(g.getWood()){
+            MapActorStage.woodIcon.setVisible(true);
+        else MapActorStage.fogtext.setVisible(true);
+            /*getActorGroup().addActor(new OneSpriteStaticActor(g.getWood()){
                 @Override
                 public void init() {
                     super.init();
@@ -31,7 +29,7 @@ public class MapActorWoodStage extends MapActorStage {
                     });
                 }
             });
-        allRemove();
+        allRemove();*/
     }
 
 }
